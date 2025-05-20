@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoHub - All-in-One Car Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-blue-600">AutoHub</h1>
+    <div class="space-x-4">
+      <a href="#home" class="hover:text-blue-600">Home</a>
+      <a href="#listings" class="hover:text-blue-600">Listings</a>
+      <a href="#services" class="hover:text-blue-600">Services</a>
+      <a href="#parts" class="hover:text-blue-600">Car Parts</a>
+      <a href="#about" class="hover:text-blue-600">About</a>
+      <a href="#upload" class="hover:text-blue-600">Upload</a>
+      <a href="#signup" class="bg-blue-600 text-white px-4 py-2 rounded">Dealer Signup</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="bg-blue-100 py-20 text-center">
+    <h2 class="text-4xl font-bold mb-4">Everything Cars, One Platform</h2>
+    <p class="mb-6">Buy, hire, service, and trade cars. Connect with dealers & providers instantly.</p>
+    <input type="text" id="searchInput" placeholder="Search cars, services, or parts..." class="px-4 py-2 w-1/2 rounded shadow" onkeyup="filterListings()" />
+  </section>
+
+  <!-- Car Listings Section -->
+  <section id="listings" class="p-8">
+    <h3 class="text-2xl font-semibold mb-6">Car Listings</h3>
+    <div id="carGrid" class="grid gap-6 grid-cols-1 md:grid-cols-3">
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Car" class="mb-2">
+        <h4 class="font-bold">Toyota Premio 2014</h4>
+        <p>KES 1,100,000</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Car" class="mb-2">
+        <h4 class="font-bold">Mazda Demio 2016</h4>
+        <p>KES 950,000</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Car" class="mb-2">
+        <h4 class="font-bold">Mercedes-Benz C180</h4>
+        <p>KES 1,750,000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-white p-8">
+    <h3 class="text-2xl font-semibold mb-6">Services</h3>
+    <ul class="list-disc pl-6">
+      <li>Car Hire</li>
+      <li>Trade-in Cars</li>
+      <li>Mechanical Services</li>
+      <li>Car Accessories</li>
+      <li>Car Wash & Detailing</li>
+      <li>Bodywork & Painting</li>
+    </ul>
+  </section>
+
+  <!-- Car Parts Section -->
+  <section id="parts" class="bg-gray-50 p-8">
+    <h3 class="text-2xl font-semibold mb-6">Car Parts & Accessories</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="partsGrid">
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Engine Parts" class="mb-2">
+        <h4 class="font-bold">Engine & Transmission</h4>
+        <p>Find OEM and aftermarket engine components.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Brake Pads" class="mb-2">
+        <h4 class="font-bold">Brakes & Suspension</h4>
+        <p>Brake pads, shock absorbers, and more.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <img src="https://via.placeholder.com/300x200" alt="Body Parts" class="mb-2">
+        <h4 class="font-bold">Body Panels & Lights</h4>
+        <p>Doors, bumpers, mirrors, headlights, and body trims.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Owner Section -->
+  <section id="about" class="bg-white p-8">
+    <h3 class="text-2xl font-semibold mb-4">About the Founder</h3>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="mb-4">AutoHub was founded by a passionate automotive engineer and entrepreneur dedicated to making car access, service, and resale easier for everyone. With deep industry knowledge and experience in vehicle diagnostics, the platform serves as a bridge between dealers, buyers, and service providers.</p>
+      <p>Our platform runs on a commission-based model, ensuring that sellers and service providers only pay when they earn — fair, transparent, and performance-driven.</p>
+    </div>
+  </section>
+
+  <!-- Upload Panel Section -->
+  <section id="upload" class="bg-white p-8">
+    <h3 class="text-2xl font-semibold mb-4">Upload Car or Part Listing</h3>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <input type="text" placeholder="Title (e.g., Toyota Axio 2015)" class="px-4 py-2 border rounded">
+      <input type="text" placeholder="Price (e.g., KES 1,200,000)" class="px-4 py-2 border rounded">
+      <input type="text" placeholder="Category (Car, Part, Service)" class="px-4 py-2 border rounded">
+      <input type="text" placeholder="Image URL" class="px-4 py-2 border rounded">
+      <textarea placeholder="Description" class="px-4 py-2 border rounded col-span-2"></textarea>
+      <button class="bg-green-600 text-white py-2 rounded col-span-2">Upload Listing</button>
+    </form>
+  </section>
+
+  <!-- Dealer Signup Section -->
+  <section id="signup" class="bg-blue-50 p-8">
+    <h3 class="text-2xl font-semibold mb-4">Dealer Registration</h3>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+      <input type="text" placeholder="Full Name" class="px-4 py-2 border rounded">
+      <input type="email" placeholder="Email Address" class="px-4 py-2 border rounded">
+      <input type="text" placeholder="Company Name" class="px-4 py-2 border rounded">
+      <input type="text" placeholder="Phone Number" class="px-4 py-2 border rounded">
+      <textarea placeholder="What services do you offer?" class="px-4 py-2 border rounded col-span-2"></textarea>
+      <button class="bg-blue-600 text-white py-2 rounded col-span-2">Register</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    &copy; 2025 AutoHub. Connecting Cars & Services Nationwide.
+  </footer>
+
+  <script>
+    function filterListings() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const sections = [
+        document.querySelectorAll("#carGrid > div"),
+        document.querySelectorAll("#partsGrid > div")
+      ];
+
+      sections.forEach(group => {
+        group.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          const match = text.includes(input);
+          card.style.display = match ? "block" : "none";
+        });
+      });
+    }
+  </script>
+</body>
+</html>
